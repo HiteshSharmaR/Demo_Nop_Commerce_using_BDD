@@ -11,6 +11,11 @@ public class ProductDetailPageMethod {
 
     public static void addingProductToTheCart(WebDriver driver) {
         try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        try {
             logger.info("Attempting to add product to the cart.");
             driver.findElement(ProductDetailPageObject.ADD_TO_CART_BUTTON).click();
             logger.info("Product successfully added to the cart.");

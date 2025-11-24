@@ -3,7 +3,11 @@ package page.steps;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
+import page.methods.HeaderMenuMethods;
 import page.methods.LoginPageMethods;
+import page.methods.MyAccountsMethods;
+
+import java.sql.Driver;
 
 public class LoginSteps {
     private WebDriver driver;
@@ -23,5 +27,7 @@ public class LoginSteps {
     @And("I click the on login button")
     public void i_click_the_on_login_button() {
         LoginPageMethods.clickOnLoginButton(driver);
+        HeaderMenuMethods.clickOnHeaderMenu(driver,"My account");
+        MyAccountsMethods.verifyFirstNameInMyAccountPage(driver);
     }
 }
